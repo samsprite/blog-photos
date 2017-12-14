@@ -127,10 +127,9 @@ def handle_photo():
             list_info[-1]['arr']['text'].append(info)
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
-    list_info =  list_info.encode("utf-8")
     final_dict = {"list": list_info}
     with open('../samsprite.github.io/source/photos/data.json','w') as fp:
-        json.dump(final_dict, fp)
+        json.dump(final_dict, fp, encoding='utf-8')
 
 def cut_photo():
     """裁剪算法
